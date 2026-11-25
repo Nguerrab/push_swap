@@ -5,73 +5,120 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nguerrab <nguerrab@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/17 15:38:19 by nguerrab          #+#    #+#             */
-/*   Updated: 2026/11/24 14:07:07 by aisfi            ###   ########.fr       */
+/*   Created: 2026/11/20 11:19:02 by nguerrab          #+#    #+#             */
+/*   Updated: 2026/11/24 15:30:48 by nguerrab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./header/push_swap.h"
+#include "header/push_swap.h"
 
-void    chunk_sort(t_ctr *s);
-
-int	main()
+static	void	find(char *av, int *c)
 {
-	t_ctr *c;
-	t_stack	*a;
+	int	i;
+
+	i = 0;
+	while (av[i])
+	{
+		while (av[i] == ' ')
+			i++;
+		if (av[i] == '-' || av[i] == '+')
+			i++;
+		if (av[i] >= '0' && av[i] <= '9')
+		{
+			(*c)++;
+			while (av[i] >= '0' && av[i] <= '9')
+				i++;
+		}
+		while (av[i] != ' ' && !(av[i] >= '0' && av[i] <= '9') && av[i])
+			i++;
+	}
+}
+
+static	int	inputs(int ac, char **av)
+{
+	int		c;
 	int		i;
-	
-	c = ctr_int(27);
-	if (!c)
-		return (1);
-	a = c->a;
-	stack_push(60, a);	
-	stack_push(55, a);	
-	stack_push(12, a);	
-	stack_push(5, a);	
-	stack_push(2, a);	
-	stack_push(22, a);	
-	stack_push(9, a);	
-	stack_push(-19, a);	
-	stack_push(40, a);	
-	stack_push(25, a);	
-	stack_push(71, a);	
-	stack_push(10, a);	
-	stack_push(-6, a);	
-	stack_push(3, a);	
-	stack_push(6, a);	
-	stack_push(0, a);	
-	stack_push(4, a);	
-	stack_push(82, a);	
-	stack_push(62, a);	
-	stack_push(15, a);	
-	stack_push(14, a);	
-	stack_push(32, a);	
-	stack_push(11, a);	
-	stack_push(99, a);	
-	stack_push(8, a);	
-	stack_push(64, a);	
-	stack_push(28, a);	
 
+	c = 0;
 	i = 0;
-	while (i < a->size)
+	while (i < ac)
 	{
-		printf("[%d] ", a->arr[(a->head + i) % a->capacity]);
+		find(av[i], &c);
 		i++;
 	}
-	printf("\n");
-	
-	chunk_sort(c);
+	return (c);
+}
 
+int	add_to(t_ctr *s, int ac, char **av)
+{
+	int	c;
+	int	i;
+
+	c = 0;
 	i = 0;
-	while (i < a->size)
+	while (c < ac)
 	{
-		printf("[%d] ", a->arr[(a->head + i) % a->capacity]);
-		i++;
+		if (isallnum(av[c]) == 0 || (isallnum(av[c]) && !isnum(av[c])))
+		{
+			stack_free(s->a);
+			stack_free(s->b);
+			return (0);
+		}
+		else
+		{
+			if (valid_add(av[c], s, &i) == 0)
+			{
+				stack_free(s->a);
+				stack_free(s->b);
+				return (0);
+			}
+		}
+		c++;
 	}
+	return (1);
+}
 
-	printf("\n");
-	stack_free(c->a);
-	stack_free(c->b);
-	free(c);
+static	int	check_flag(int argc, char **argv, int *flag)
+{
+	if (ft_memcmp(argv[1], "--simple", ft_strlen(argv[1])) == 0)
+		*flag = 1;
+	else if (ft_memcmp(argv[1], "--medium", ft_strlen(argv[1])) == 0)
+		*flag = 2;
+	else if (ft_memcmp(argv[1], "--complex", ft_strlen(argv[1])) == 0)
+		*flag = 3;
+	else
+		*flag = 0;
+	if (*flag == 0)
+		return (inputs(argc - 1, argv + 1));
+	else
+		return (inputs(argc - 2, argv + 2));
+}
+
+int	main(int argc, char **argv)
+{
+	t_ctr	*s;
+	int		flag;
+	int		c;
+
+	if (argc < 2)
+		return (0);
+	s = NULL;
+	c = check_flag(argc, argv, &flag);
+	if (flag != 0)
+	{
+		if (argc < 3)
+			error();
+	}
+	if (c == 0)
+		error();
+	else
+		s = ctr_int(c);
+	if (!s)
+		error();
+	ifelse(flag, argc, argv, s);
+	push_swap(s, flag);
+	stack_free(s->a);
+	stack_free(s->b);
+	free(s);
 	return (0);
 }
