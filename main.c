@@ -6,7 +6,7 @@
 /*   By: nguerrab <nguerrab@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 11:19:02 by nguerrab          #+#    #+#             */
-/*   Updated: 2026/11/24 15:30:48 by nguerrab         ###   ########.fr       */
+/*   Updated: 2026/11/26 09:54:28 by aisfi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,8 @@ int	main(int argc, char **argv)
 	if (!s)
 		error();
 	ifelse(flag, argc, argv, s);
-	push_swap(s, flag);
+	//push_swap(s, flag);
+	
 	stack_free(s->a);
 	stack_free(s->b);
 	free(s);

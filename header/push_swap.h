@@ -6,7 +6,7 @@
 /*   By: aisfi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 15:46:18 by aisfi             #+#    #+#             */
-/*   Updated: 2026/11/24 18:20:55 by nguerrab         ###   ########.fr       */
+/*   Updated: 2026/11/25 13:57:59 by aisfi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	rra(t_ctr *s);
 void	rrb(t_ctr *s);
 void	rrr(t_ctr *s);
 void	bubble_sort(t_ctr *s);
+void    chunk_sort(t_ctr *s)
 t_ctr	*ctr_int(int cap);
 t_stack	*stack_init(int cap);
 
