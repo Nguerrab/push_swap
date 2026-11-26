@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
-
+#include <stdio.h>
 typedef struct s_stack
 {
 	int	*arr;
@@ -67,6 +67,8 @@ void	rra(t_ctr *s);
 void	rrb(t_ctr *s);
 void	rrr(t_ctr *s);
 void	bubble_sort(t_ctr *s);
+void    chunk_sort(t_ctr *s);
+float	disorder(t_stack *a);
 t_ctr	*ctr_int(int cap);
 t_stack	*stack_init(int cap);
 
