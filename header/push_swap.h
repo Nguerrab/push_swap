@@ -6,7 +6,7 @@
 /*   By: aisfi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 15:46:18 by aisfi             #+#    #+#             */
-/*   Updated: 2026/11/25 13:57:59 by aisfi            ###   ########.fr       */
+/*   Updated: 2026/11/26 15:03:47 by aisfi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
-
+#include <stdio.h>
 typedef struct s_stack
 {
 	int	*arr;
@@ -62,7 +62,8 @@ void	rra(t_ctr *s);
 void	rrb(t_ctr *s);
 void	rrr(t_ctr *s);
 void	bubble_sort(t_ctr *s);
-void    chunk_sort(t_ctr *s)
+void    chunk_sort(t_ctr *s);
+float	disorder(t_stack *a);
 t_ctr	*ctr_int(int cap);
 t_stack	*stack_init(int cap);
 

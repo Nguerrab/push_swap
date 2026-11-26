@@ -6,11 +6,11 @@
 /*   By: nguerrab <nguerrab@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 11:19:02 by nguerrab          #+#    #+#             */
-/*   Updated: 2026/11/26 09:54:28 by aisfi            ###   ########.fr       */
+/*   Updated: 2026/11/26 15:06:50 by aisfi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header/push_swap.h"
+#include "./header/push_swap.h"
 
 static	void	find(char *av, int *c)
 {
@@ -117,7 +117,7 @@ int	main(int argc, char **argv)
 		error();
 	ifelse(flag, argc, argv, s);
 	//push_swap(s, flag);
-	
+	printf("disorder: %f\n", disorder(s->a));	
 	stack_free(s->a);
 	stack_free(s->b);
 	free(s);
