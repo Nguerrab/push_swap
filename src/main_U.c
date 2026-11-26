@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils2.c                                     :+:      :+:    :+:   */
+/*   main_U.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nguerrab <nguerrab@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 18:44:35 by nguerrab          #+#    #+#             */
-/*   Updated: 2026/11/24 14:22:06 by nguerrab         ###   ########.fr       */
+/*   Updated: 2026/11/26 14:41:26 by nguerrab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,18 +65,6 @@ int	isnum(char *av)
 	return (0);
 }
 
-void	rrr(t_ctr *s)//valide
-{
-	int	a;
-	int	b;
-
-	a = stack_shift_down(s->a);
-	b = stack_shift_down(s->b);
-	if (!a && !b)
-		return ;
-	write(1, "rrr\n", 4);
-}
-
 int	ft_strlen(char *str)
 {
 	int	i;
@@ -85,4 +73,10 @@ int	ft_strlen(char *str)
 	while (str[i])
 		i++;
 	return (i);
+}
+
+void	error(void)
+{
+	write(2, "ERROR\n", 6);
+	exit(1);
 }

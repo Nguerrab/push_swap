@@ -6,26 +6,11 @@
 /*   By: nguerrab <nguerrab@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/23 19:49:25 by nguerrab          #+#    #+#             */
-/*   Updated: 2026/11/24 15:10:40 by nguerrab         ###   ########.fr       */
+/*   Updated: 2026/11/26 14:44:33 by nguerrab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
-
-void	ifelse(int flag, int argc, char **argv, t_ctr *s)
-{
-	int	c;
-
-	if (flag == 0)
-		c = add_to(s, argc - 1, argv + 1);
-	else
-		c = add_to(s, argc - 2, argv + 2);
-	if (c == 0)
-	{
-		free(s);
-		error();
-	}
-}
 
 void	stack_swap(t_stack *s)//valid
 {
@@ -55,4 +40,26 @@ int	stack_pop(t_stack *s, int *val)//valid; return = val or ERROR
 	s->head = (s->head + 1) % s->capacity;
 	s->size--;
 	return (1);
+}
+
+void	rrr(t_ctr *s)//valide
+{
+	int	a;
+	int	b;
+
+	a = stack_shift_down(s->a);
+	b = stack_shift_down(s->b);
+	if (!a && !b)
+		return ;
+	write(1, "rrr\n", 4);
+}
+
+void	stack_push(int val, t_stack *s)//3amrha fial
+{
+	if (s->size < s->capacity)
+	{
+		s->head = (s->head - 1 + s->capacity) % s->capacity;
+		s->arr[s->head] = val;
+		s->size++;
+	}
 }

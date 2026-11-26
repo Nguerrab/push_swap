@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils3.c                                     :+:      :+:    :+:   */
+/*   main_U2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nguerrab <nguerrab@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/21 14:30:56 by nguerrab          #+#    #+#             */
-/*   Updated: 2026/11/24 14:23:27 by nguerrab         ###   ########.fr       */
+/*   Updated: 2026/11/26 14:43:11 by nguerrab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,17 @@ void	ft_putnbr(int n)
 	print(nb);
 }
 
-void	error(void)
+void	ifelse(int flag, int argc, char **argv, t_ctr *s)
 {
-	write(2, "ERROR\n", 6);
-	exit(1);
+	int	c;
+
+	if (flag == 0)
+		c = add_to(s, argc - 1, argv + 1);
+	else
+		c = add_to(s, argc - 2, argv + 2);
+	if (c == 0)
+	{
+		free(s);
+		error();
+	}
 }
