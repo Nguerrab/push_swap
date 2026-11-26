@@ -6,7 +6,7 @@
 /*   By: aisfi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 15:46:18 by aisfi             #+#    #+#             */
-/*   Updated: 2026/11/26 15:03:47 by aisfi            ###   ########.fr       */
+/*   Updated: 2026/11/26 14:02:39 by nguerrab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,12 @@ int		isnum(char *av);
 int		repetition(t_ctr *s, int n, int *i);
 int		valid_add(char *av, t_ctr *s, int *i);
 int		add_to(t_ctr *s, int ac, char **av);
+int		sqre(int n);
+int		fft_max(t_stack *s);
+int		ft_index(int n, int *arr, t_stack *a);
+int		*ranking(t_stack *a);
 void	push_swap(t_ctr *s, int flag);
+void	chunk_sort(t_ctr *s);
 void	ifelse(int flag, int argc, char **argv, t_ctr *s);
 void	error(void);
 void	print_arr(t_stack *s);
