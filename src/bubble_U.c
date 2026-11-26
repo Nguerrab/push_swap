@@ -1,26 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.c                                            :+:      :+:    :+:   */
+/*   bubble_U.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nguerrab <nguerrab@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/23 20:02:34 by nguerrab          #+#    #+#             */
-/*   Updated: 2026/11/24 16:03:40 by nguerrab         ###   ########.fr       */
+/*   Updated: 2026/11/26 14:39:11 by nguerrab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h" 
-
-void	stack_push(int val, t_stack *s)//3amrha fial
-{
-	if (s->size < s->capacity)
-	{
-		s->head = (s->head - 1 + s->capacity) % s->capacity;
-		s->arr[s->head] = val;
-		s->size++;
-	}
-}
 
 static	void	skip_spaces(char *str, int *i)
 {
