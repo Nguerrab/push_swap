@@ -6,7 +6,7 @@
 /*   By: nguerrab <nguerrab@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 11:19:02 by nguerrab          #+#    #+#             */
-/*   Updated: 2026/11/26 15:35:04 by aisfi            ###   ########.fr       */
+/*   Updated: 2026/11/27 13:57:10 by aisfi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ static	int	check_flag(int argc, char **argv, int *flag)
 		*flag = 2;
 	else if (ft_memcmp(argv[1], "--complex", ft_strlen(argv[1])) == 0)
 		*flag = 3;
+	else if (ft_memcmp(argv[1], "--adaptive", ft_strlen(argv[1])) == 0)
+		*flag = 4;
 	else
 		*flag = 0;
 	if (*flag == 0)
@@ -116,8 +118,7 @@ int	main(int argc, char **argv)
 	if (!s)
 		error();
 	ifelse(flag, argc, argv, s);
-	//push_swap(s, flag);
-	printf("disorder: %f\n", disorder(s->a));	
+	push_swap(s, flag);
 	stack_free(s->a);
 	stack_free(s->b);
 	free(s);

@@ -6,7 +6,7 @@
 /*   By: aisfi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 15:46:18 by aisfi             #+#    #+#             */
-/*   Updated: 2026/11/26 14:02:39 by nguerrab         ###   ########.fr       */
+/*   Updated: 2026/11/27 11:57:34 by aisfi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int		sqre(int n);
 int		fft_max(t_stack *s);
 int		ft_index(int n, int *arr, t_stack *a);
 int		*ranking(t_stack *a);
-void	push_swap(t_ctr *s, int flag);
+void	push_swap(t_ctr *s, int flag, float disorder);
 void	chunk_sort(t_ctr *s);
 void	ifelse(int flag, int argc, char **argv, t_ctr *s);
 void	error(void);
@@ -68,6 +68,7 @@ void	rrb(t_ctr *s);
 void	rrr(t_ctr *s);
 void	bubble_sort(t_ctr *s);
 void    chunk_sort(t_ctr *s);
+void    radix_sort(t_ctr *s);
 float	disorder(t_stack *a);
 t_ctr	*ctr_int(int cap);
 t_stack	*stack_init(int cap);
