@@ -46,7 +46,7 @@ int		sqre(int n);
 int		fft_max(t_stack *s);
 int		ft_index(int n, int *arr, t_stack *a);
 int		*ranking(t_stack *a);
-void	push_swap(t_ctr *s, int flag);
+void	push_swap(t_ctr *s, int flag, float disorder);
 void	chunk_sort(t_ctr *s);
 void	ifelse(int flag, int argc, char **argv, t_ctr *s);
 void	error(void);
