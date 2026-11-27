@@ -6,7 +6,7 @@
 /*   By: aisfi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 15:46:18 by aisfi             #+#    #+#             */
-/*   Updated: 2026/11/27 11:57:34 by aisfi            ###   ########.fr       */
+/*   Updated: 2026/11/27 15:03:15 by aisfi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	rr(t_ctr *s);
 void	rra(t_ctr *s);
 void	rrb(t_ctr *s);
 void	rrr(t_ctr *s);
-void	bubble_sort(t_ctr *s);
+void	select_sort(t_ctr *s);
 void    chunk_sort(t_ctr *s);
 void    radix_sort(t_ctr *s);
 float	disorder(t_stack *a);
