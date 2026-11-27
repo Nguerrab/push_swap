@@ -118,8 +118,7 @@ int	main(int argc, char **argv)
 	if (!s)
 		error();
 	ifelse(flag, argc, argv, s);
-//	push_swap(s, flag, disorder(s->a));
-	printf("%f", disorder(s->a));
+	push_swap(s, flag);
 	stack_free(s->a);
 	stack_free(s->b);
 	free(s);
